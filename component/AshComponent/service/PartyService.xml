@@ -1,0 +1,12 @@
+<service verb="create" noun="Party" type="entity-auto">-->
+    <in-parameters>
+        <auto-parameters entity-name="Party" include="nonpk"/>
+        <parameter name="partyTypeId" required="false"/>
+        <parameter name="createdDate" required="true">
+            <time-range after="now" format="mm/dd/yyyy"/>
+        </parameter>
+    </in-parameters>
+    <out-parameters>
+        <parameter name="partyId"/>
+    </out-parameters>
+</service>
