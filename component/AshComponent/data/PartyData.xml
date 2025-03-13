@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+    <Party partyId="1000" partyTypeId="PERSON" createdDate="2025-03-12"/>
+    <Party partyId="1001" partyTypeId="PERSON" createdDate="2025-03-12"/>
+    <Party partyId="1002" partyTypeId="ORGANIZATION" createdDate="2025-03-12"/>
+
+    <PartyType partyTypeId="PERSON" description="a single person"/>
+    <PartyType partyTypeId="ORGANIZATION" description="an organization"/>
+
+    <PartyRole partyId="1000" roleTypeId="ADMIN"/>
+    <PartyRole partyId="1001" roleTypeId="CUSTOMER"/>
+    <PartyRole partyId="1002" roleTypeId="CUSTOMER"/>
+
+    <Person partyId="1000" firstName="Aashutosh" lastName="Soni"/>
+    <Person partyId="1001" firstName="Aaditya" lastName="Paliwal"/>
+
+    <Organization partyId="1002" orgName="Hotwax Systems"/>
+
+    <PartyContactMech partyId="1000" contactMechId="1000" fromDate="2025-12-03" thruDate="2025-12-03"/>
+    <PartyContactMech partyId="1000" contactMechId="1001" fromDate="2025-12-03" thruDate="2025-12-03"/>
+    <PartyContactMech partyId="1000" contactMechId="1002" fromDate="2025-12-03" thruDate="2025-12-03"/>
+
+    <PartyContactMech partyId="1001" contactMechId="1010" fromDate="2025-12-03" thruDate="2025-12-03"/>
+    <PartyContactMech partyId="1001" contactMechId="1011" fromDate="2025-12-03" thruDate="2025-12-03"/>
+    <PartyContactMech partyId="1001" contactMechId="1012" fromDate="2025-12-03" thruDate="2025-12-03"/>
+
+    <PartyContactMech partyId="1002" contactMechId="1020" fromDate="2025-12-03" thruDate="2025-12-03"/>
+    <PartyContactMech partyId="1002" contactMechId="1021" fromDate="2025-12-03" thruDate="2025-12-03"/>
+    <PartyContactMech partyId="1002" contactMechId="1022" fromDate="2025-12-03" thruDate="2025-12-03"/>
+
+
+    <ContactMech contactMechId="1000" contactMechTypeId="TELECOM_NUMBER"/>
+    <ContactMech contactMechId="1001" contactMechTypeId="POSTAL_ADDRESS"/>
+    <ContactMech contactMechId="1002" contactMechTypeId="EMAIL_ADDRESS"/>
+
+    <ContactMech contactMechId="1010" contactMechTypeId="TELECOM_NUMBER"/>
+    <ContactMech contactMechId="1011" contactMechTypeId="POSTAL_ADDRESS"/>
+    <ContactMech contactMechId="1012" contactMechTypeId="EMAIL_ADDRESS"/>
+
+    <ContactMech contactMechId="1020" contactMechTypeId="TELECOM_NUMBER"/>
+    <ContactMech contactMechId="1021" contactMechTypeId="POSTAL_ADDRESS"/>
+    <ContactMech contactMechId="1022" contactMechTypeId="EMAIL_ADDRESS"/>
+
+    <TelecomNumber contactMechId="1001" countryCode="+91" contactNumber="9993234069"/>
+    <TelecomNumber contactMechId="1010" countryCode="+91" contactNumber="0987654321"/>
+    <TelecomNumber contactMechId="1020" countryCode="+10" contactNumber="789 2333 234"/>
+
+    <PhysicalAddress contactMechId="1001" address1="xx nehru Nagar" city="Indore" postalCode="452011"/>
+    <PhysicalAddress contactMechId="1011" address1="xx palasia colony" city="Indore" postalCode="452011"/>
+    <PhysicalAddress contactMechId="1021" address1="plot 80, scheme 54" city="Indore" postalCode="452011"/>
+
+    <EmailAddress contactMechId="1020" email="ashutoshsoni130@gmail.com"/>
+    <EmailAddress contactMechId="1021" email="aditaya@gmail.com"/>
+    <EmailAddress contactMechId="1022" email="info@hotwaxsystems.com"/>
+</entity-facade-xml>
