@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+
+    <entity entity-name="UserLogin" package="AshComponent">
+        <field name="userLoginId" type="id" is-pk="true"/>
+        <field name="partyId" type="id"/>
+        <field name="currentPassword" type="text-medium"/>
+        <field name="enabled" type="text-short"/>
+    </entity>
+
+    <entity entity-name="MYUserLoginHistory" package="AshComponent">
+        <field name="userLoginId" type="id" is-pk="true"/>
+        <field name="partyId" type="id"/>
+        <field name="fromDate" type="date"/>
+        <field name="thruDate" type="date"/>
+        <field name="successfulLogin" type="text-short"/>
+    </entity>
+
+    <entity entity-name="UserLoginSession" package="AshComponent">
+        <field name="userLoginId" type="id" is-pk="true"/>
+        <field name="sessionData" type="text-short"/>
+    </entity>
+
+    <entity entity-name="UserLoginSecurityGroup" package="AshComponent">
+        <field name="userLoginId" type="id" is-pk="true"/>
+        <field name="groupId" type="text-long"/>
+        <field name="fromDate" type="date"/>
+        <field name="thruDate" type="date"/>
+    </entity>
+
+    <entity entity-name="SecurityGroup" package="AshComponent">
+        <field name="groupId" type="text-short" is-pk="true"/>
+        <field name="description" type="text-long"/>
+    </entity>
+
+    <entity entity-name="SecurityGroupPermission" package="AshComponent">
+        <field name="groupId" type="text-short" is-pk="true"/>
+        <field name="permissionId" type="text-long"/>
+    </entity>
+
+    <entity entity-name="SecurityPermission" package="AshComponent">
+        <field name="permissionId" type="text-short" is-pk="true"/>
+        <field name="description" type="text-long"/>
+    </entity>
+
+</entities>

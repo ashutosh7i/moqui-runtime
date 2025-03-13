@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+
+    <UserLogin userLoginId="1110" partyId="1000" currentPassword="mypassword007" enabled="Y"/>
+    <UserLogin userLoginId="1111" partyId="1001" currentPassword="someanotherpasswd" enabled="Y"/>
+    <UserLogin userLoginId="1112" partyId="1002" currentPassword="anotherpassword" enabled="Y"/>
+
+    <MYUserLoginHistory userLoginId="1110" partyId="1000" fromDate="2025-03-13" thruDate="2025-03-13" successfulLogin="Y"/>
+    <MYUserLoginHistory userLoginId="1111" partyId="1001" fromDate="2025-03-13" thruDate="2025-03-13" successfulLogin="Y"/>
+    <MYUserLoginHistory userLoginId="1112" partyId="1002" fromDate="2025-03-13" thruDate="2025-03-13" successfulLogin="Y"/>
+
+    <UserLoginSession userLoginId="1110" sessionData="some data"/>
+    <UserLoginSession userLoginId="1111" sessionData="another data"/>
+    <UserLoginSession userLoginId="1112" sessionData="some more data"/>
+
+    <UserLoginSecurityGroup userLoginId="1110" groupId="ADMIN" fromDate="2025-03-13" thruDate="2025-03-13"/>
+    <UserLoginSecurityGroup userLoginId="1111" groupId="SITE-USER" fromDate="2025-03-13" thruDate="2025-03-13"/>
+    <UserLoginSecurityGroup userLoginId="1112" groupId="SITE-USER" fromDate="2025-03-13" thruDate="2025-03-13"/>
+
+    <SecurityGroup groupId="ADMIN" description="admin of application"/>
+    <SecurityGroup groupId="SITE-USER" description="general user of application"/>
+
+    <SecurityGroupPermission groupId="ADMIN" permissionId="CREATE"/>
+    <SecurityGroupPermission groupId="ADMIN" permissionId="READ"/>
+    <SecurityGroupPermission groupId="ADMIN" permissionId="UPDATE"/>
+    <SecurityGroupPermission groupId="ADMIN" permissionId="DELETE"/>
+
+    <SecurityGroupPermission groupId="SITE-USER" permissionId="CREATE"/>
+    <SecurityGroupPermission groupId="SITE-USER" permissionId="READ"/>
+    <SecurityGroupPermission groupId="SITE-USER" permissionId="UPDATE"/>
+
+    <SecurityPermission permissionId="CREATE" description="ability to create items"/>
+    <SecurityPermission permissionId="READ" description="ability to read items"/>
+    <SecurityPermission permissionId="UPDATE" description="ability to update items"/>
+    <SecurityPermission permissionId="DELETE" description="ability to delete items"/>
+
+</entity-facade-xml>
