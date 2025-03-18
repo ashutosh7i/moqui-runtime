@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+
+    <PartyType partyTypeId="PERSON" description="Person"/>
+    <PartyType partyTypeId="LEGAL_ORGANIZATION" description="legal organization"/>
+    <PartyType partyTypeId="CORPORATION" description="corporation"/>
+
+    <RoleType roleTypeId="ADMIN" description=""/>
+    <RoleType roleTypeId="AGENT" description=""/>
+    <RoleType roleTypeId="CLIENT" description=""/>
+    <RoleType roleTypeId="MANAGER" description=""/>
+    <RoleType roleTypeId="CUSTOMER" description=""/>
+    <RoleType roleTypeId="VENDOR" description=""/>
+
+    <Party partyId="1000" partyTypeId="PERSON" statusId="PARTY_ENABLED" createdDate="2025-03-12"/>
+    <Party partyId="1001" partyTypeId="PERSON"  statusId="PARTY_ENABLED" createdDate="2025-03-17"/>
+    <Party partyId="1002" partyTypeId="PERSON"  statusId="PARTY_ENABLED" createdDate="2025-03-16"/>
+
+    <PartyRole partyId="1000" roleTypeId="ADMIN"/>
+    <PartyRole partyId="1001" roleTypeId="MANAGER"/>
+    <PartyRole partyId="1002" roleTypeId="CUSTOMER"/>
+
+    <Person partyId="1000" firstName="aashutosh" lastName="soni" gender="M" birthDate="2004-02-29"/>
+    <Person partyId="1001" firstName="aditya" lastName="paliwal" gender="M" birthDate="2004-06-12"/>
+    <Person partyId="1002" firstName="akshat" lastName="tiwari" gender="M" birthDate="2003-07-24"/>
+
+    <ContactMechType contactMechTypeId="EMAIL_ADDRESS" description=""/>
+    <ContactMechType contactMechTypeId="TELECOM_NUMBER" description=""/>
+    <ContactMechType contactMechTypeId="POSTAL_ADDRESS" description=""/>
+
+    <ContactMechPurposeType contactMechPurposeTypeId="BILLING_EMAIL" description=""/>
+    <ContactMechPurposeType contactMechPurposeTypeId="PHONE_BILLING" description=""/>
+    <ContactMechPurposeType contactMechPurposeTypeId="BILLING_LOCATION" description=""/>
+    <ContactMechPurposeType contactMechPurposeTypeId="SHIPPING_LOCATION" description=""/>
+    <ContactMechPurposeType contactMechPurposeTypeId="PHONE_SHIPPING" description=""/>
+
+    <ContactMech contactMechId="1001" contactMechTypeId="EMAIL_ADDRESS" infoString="myemail@gmail.com"/>
+    <ContactMech contactMechId="1002" contactMechTypeId="TELECOM_NUMBER" infoString=""/>
+    <ContactMech contactMechId="1003" contactMechTypeId="POSTAL_ADDRESS" infoString=""/>
+    <ContactMech contactMechId="1004" contactMechTypeId="EMAIL_ADDRESS" infoString="email@gmail.com"/>
+    <ContactMech contactMechId="1005" contactMechTypeId="TELECOM_NUMBER" infoString=""/>
+    <ContactMech contactMechId="1006" contactMechTypeId="POSTAL_ADDRESS" infoString=""/>
+
+    <PartyContactMech partyId="1001" contactMechId="1001" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMech partyId="1001" contactMechId="1002" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMech partyId="1001" contactMechId="1003" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMech partyId="1002" contactMechId="1004" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMech partyId="1002" contactMechId="1005" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMech partyId="1002" contactMechId="1006" fromDate="2025-01-01" thruDate="2026-01-01"/>
+
+    <PartyContactMechPurpose partyId="1001" contactMechId="1001" contactMechPurposeTypeId="BILLING_EMAIL" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMechPurpose partyId="1001" contactMechId="1002" contactMechPurposeTypeId="PHONE_BILLING" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMechPurpose partyId="1001" contactMechId="1003" contactMechPurposeTypeId="BILLING_LOCATION" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMechPurpose partyId="1002" contactMechId="1004" contactMechPurposeTypeId="BILLING_EMAIL" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMechPurpose partyId="1002" contactMechId="1005" contactMechPurposeTypeId="PHONE_SHIPPING" fromDate="2025-01-01" thruDate="2026-01-01"/>
+    <PartyContactMechPurpose partyId="1002" contactMechId="1006" contactMechPurposeTypeId="SHIPPING_LOCATION" fromDate="2025-01-01" thruDate="2026-01-01"/>
+
+    </entity-facade-xml>

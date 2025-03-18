@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+
+    <entity entity-name="Party" package="learningudm">
+        <field name="partyId" type="id" is-pk="true"/>
+        <field name="partyTypeId" type="text-short"/>
+        <field name="statusId" type="text-short"/>
+        <field name="createdDate" type="date"/>
+    </entity>
+
+    <entity entity-name="PartyType" package="learningudm">
+        <field name="partyTypeId" type="text-short" is-pk="true"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="PartyRole" package="learningudm">
+        <field name="partyId" type="id" is-pk="true"/>
+        <field name="roleTypeId" type="text-medium" is-pk="true"/>
+    </entity>
+
+    <entity entity-name="RoleType" package="learningudm">
+        <field name="roleTypeId" type="id" is-pk="true"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="Person" package="learningudm">
+        <field name="partyId" type="id" is-pk="true"/>
+        <field name="firstName" type="text-medium"/>
+        <field name="lastName" type="text-medium"/>
+        <field name="gender" type="text-medium"/>
+        <field name="birthDate" type="date"/>
+    </entity>
+
+<!--    contact-->
+    <entity entity-name="ContactMech" package="learningudm">
+        <field name="contactMechId" type="id" is-pk="true"/>
+        <field name="contactMechTypeId" type="text-medium"/>
+        <field name="infoString" type="text-medium"/> <!-- we put email in info string -->
+    </entity>
+
+    <entity entity-name="ContactMechType" package="learningudm">
+        <field name="contactMechTypeId" type="text-short" is-pk="true"/>
+        <field name="description" type="text-short"/>
+    </entity>
+
+    <entity entity-name="PartyContactMech" package="learningudm">
+        <field name="partyId" type="id" is-pk="true"/>
+        <field name="contactMechId" type="id"/>
+        <field name="fromDate" type="date"/>
+        <field name="thruDate" type="date"/>
+    </entity>
+
+    <entity entity-name="PartyContactMechPurpose" package="learningudm">
+        <field name="partyId" type="id" is-pk="true"/>
+        <field name="contactMechId" type="id"/>
+        <field name="contactMechPurposeTypeId" type="text-short"/>
+        <field name="fromDate" type="date"/>
+        <field name="thruDate" type="date"/>
+    </entity>
+
+    <entity entity-name="ContactMechPurposeType" package="learningudm">
+        <field name="contactMechPurposeTypeId" type="text-short" is-pk="true"/>
+        <field name="description" type="text-short"/>
+    </entity>
+    
+<!--    communication event-->
+<!--used when we communicate with a party-->
+<!--    <entity entity-name="CommunicationEvent" package="learningudm">-->
+<!--        <field name="communicationEventId" type="id" is-pk="true"/>-->
+<!--        <field name="communicationEventTypeId" type="id"/>-->
+<!--        <field name="statusId" type="id"/>-->
+<!--    </entity>-->
+
+<!--    <entity entity-name="CommunicationEventType" package="learningudm">-->
+<!--        <field name="communicationEventTypeId" type="text-medium"/>-->
+<!--        <field name="description" type="text-medium"/>-->
+<!--    </entity>-->
+
+<!--    <entity entity-name="CommunicationEventPurpose" package="learningudm">-->
+<!--        <field name="communicationEventPrpTypId" type="text-medium" is-pk="true"/>-->
+<!--        <field name="communicationEventId" type="id" is-pk="true"/>-->
+<!--        <field name="description" type="id" />-->
+<!--    </entity>-->
+
+<!--    <entity entity-name="CommunicationEventPrpTyp" package="learningudm">-->
+<!--        <field name="communicationEventPrpTypId" type="text-medium"/>-->
+<!--        <field name="description" type="text-medium"/>-->
+<!--    </entity>-->
+
+</entities>
