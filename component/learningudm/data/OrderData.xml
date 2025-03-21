@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+
+    <ProductType productTypeId="FINISHED_GOOD" isPhysical="Y" isDigital="N" description=""/>
+    <ProductType productTypeId="MARKETING _PKG_PICK" isPhysical="Y" isDigital="N" description=""/>
+    <ProductType productTypeId="DIGITAL_GOOD" isPhysical="N" isDigital="Y" description=""/>
+
+    <ProductAssocType productAssocTypeId="PRODUCT_ACCESSORY" description=""/>
+    <ProductAssocType productAssocTypeId="PRODUCT_COMPONENT" description=""/>
+    <ProductAssocType productAssocTypeId="PRODUCT_VARIANT" description=""/>
+
+    <Product productId="10001" productTypeId="FINISHED_GOOD" isVirtual="Y" isVariant="N" />
+    <Product productId="10002" productTypeId="FINISHED_GOOD" isVirtual="N" isVariant="Y" />
+    <Product productId="10003" productTypeId="FINISHED_GOOD" isVirtual="N" isVariant="Y" />
+    <Product productId="10004" productTypeId="MARKETING _PKG_PICK" isVirtual="N" isVariant="Y" />
+    <Product productId="10005" productTypeId="DIGITAL_GOOD" isVirtual="Y" isVariant="N" />
+
+    <ProductAssoc productId="10003" productIdTo="1004" productAssocTypeId="PRODUCT_ACCESSORY"/>
+
+<!--    feature data-->
+
+    <ProductFeatureType productFeatureTypeId="COLOR" description="" />
+    <ProductFeatureType productFeatureTypeId="SIZE" description="" />
+    <ProductFeatureType productFeatureTypeId="MODEL_YEAR" description="" />
+    <ProductFeatureType productFeatureTypeId="PRODUCT_QUALITY" description="" />
+
+    <ProductFeatureApplType productFeatureApplTypeId="OPTIONAL_FEATURE" description="" />
+    <ProductFeatureApplType productFeatureApplTypeId="REQUIRED_FEATURE" description="" />
+    <ProductFeatureApplType productFeatureApplTypeId="SELECTABLE_FEATURE" description="" />
+    <ProductFeatureApplType productFeatureApplTypeId="STANDARD_FEATURE" description="" /
+
+    <ProductFeature productFeatureId="10001" productFeatureTypeId="COLOR" description="" />
+    <ProductFeature productFeatureId="10002" productFeatureTypeId="SIZE" description="" />
+
+    <ProductFeatureAppl productId="10003" productFeatureId="" productFeatureApplTypeId="" fromDate="" thruDate="" amount=""/>
+
+
+</entity-facade-xml>
