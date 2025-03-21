@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+
+    <entity entity-name="ProductType" package="learningudm">
+        <field name="productTypeId" type="text-medium" is-pk="true"/>
+        <field name="isPhysical" type="text-short"/>
+        <field name="isDigital" type="text-short"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="ProductAssocType" package="learningudm">
+        <field name="productAssocTypeId" type="text-medium"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+S
+    <entity entity-name="ProductFeatureType" package="learningudm">
+        <field name="productFeatureTypeId" type="text-medium"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="ProductFeatureApplType" package="learningudm">
+        <field name="productFeatureApplTypeId" type="text-medium"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="Product" package="learningudm">
+        <field name="productId" type="id" is-pk="true"/>
+        <field name="productTypeId" type="text-medium"/>
+        <field name="isVirtual" type="text-short"/>
+        <field name="isVariant" type="text-short"/>
+    </entity>
+
+   <entity entity-name="ProductAssoc" package="learningudm">
+       <field name="productId" type="id"/>
+       <field name="productIdTo" type="id"/>
+       <field name="productAssocTypeId" type="text-medium"/>
+   </entity>
+
+    <entity entity-name="ProductFeature" package="learningudm">
+        <field name="productFeatureId" type="id"/>
+        <field name="productFeatureTypeId" type="text-medium"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="ProductFeatureAppl" package="learningudm">
+        <field name="productId" type="id"/>
+        <field name="productFeatureId" type="id"/>
+        <field name="productFeatureApplTypeId" type="text-medium"/>
+        <field name="fromDate" type="date"/>
+        <field name="thruDate" type="date"/>
+        <field name="amount" type="text-short"/>
+    </entity>
+
+</entities>

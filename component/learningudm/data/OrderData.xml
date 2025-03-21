@@ -1,38 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml>
 
-    <ProductType productTypeId="FINISHED_GOOD" isPhysical="Y" isDigital="N" description=""/>
-    <ProductType productTypeId="MARKETING _PKG_PICK" isPhysical="Y" isDigital="N" description=""/>
-    <ProductType productTypeId="DIGITAL_GOOD" isPhysical="N" isDigital="Y" description=""/>
+    <OrderType orderTypeId="PURCHASE_ORDER" description="" />
+    <OrderType orderTypeId="SALES_ORDER" description="" />
 
-    <ProductAssocType productAssocTypeId="PRODUCT_ACCESSORY" description=""/>
-    <ProductAssocType productAssocTypeId="PRODUCT_COMPONENT" description=""/>
-    <ProductAssocType productAssocTypeId="PRODUCT_VARIANT" description=""/>
+    <OrderItemType orderItemTypeId="INVENTORY_ORDER_ITEM" description=""/>
+    <OrderItemType orderItemTypeId="PRODUCT_ORDER_ITEM" description=""/>
+    <OrderItemType orderItemTypeId="WORK_ORDER_ITEM" description=""/>
+    <OrderItemType orderItemTypeId="BULK_ORDER_ITEM" description=""/>
 
-    <Product productId="10001" productTypeId="FINISHED_GOOD" isVirtual="Y" isVariant="N" />
-    <Product productId="10002" productTypeId="FINISHED_GOOD" isVirtual="N" isVariant="Y" />
-    <Product productId="10003" productTypeId="FINISHED_GOOD" isVirtual="N" isVariant="Y" />
-    <Product productId="10004" productTypeId="MARKETING _PKG_PICK" isVirtual="N" isVariant="Y" />
-    <Product productId="10005" productTypeId="DIGITAL_GOOD" isVirtual="Y" isVariant="N" />
+    <OrderHeader orderId="10001" orderTypeId="PURCHASE_ORDER" orderName="Ord001" orderDate="2025-03-20" statusId="ORDER_ACCEPTED"/>
+    <OrderHeader orderId="10002" orderTypeId="PURCHASE_ORDER" orderName="Ord002" orderDate="2025-03-20" statusId="ORDER_REJECTED"/>
+    <OrderHeader orderId="10003" orderTypeId="SALES_ORDER" orderName="Ord003" orderDate="2025-03-20" statusId="ORDER_CREATED"/>
+    <OrderHeader orderId="10004" orderTypeId="SALES_ORDER" orderName="Ord004" orderDate="2025-03-20" statusId="ORDER_COMPLETED"/>
 
-    <ProductAssoc productId="10003" productIdTo="1004" productAssocTypeId="PRODUCT_ACCESSORY"/>
+    <OrderContactMech orderId="10001" contactMechId="10001" contactMechPurposeTypeId="BILLING_EMAIL" />
+    <OrderContactMech orderId="10001" contactMechId="10002" contactMechPurposeTypeId="PAYMENT_EMAIL" />
+    <OrderContactMech orderId="10001" contactMechId="10002" contactMechPurposeTypeId="ORDER_EMAIL" />
+    <OrderContactMech orderId="10002" contactMechId="10003" contactMechPurposeTypeId="BILLING_EMAIL" />
 
-<!--    feature data-->
+    <OrderItem orderId="10001" orderItemSeqId="10001" orderItemTypeId="INVENTORY_ORDER_ITEM" statusId="ITEM_APPROVED"/>
+    <OrderItem orderId="10002" orderItemSeqId="10002" orderItemTypeId="PRODUCT_ORDER_ITEM" statusId="ITEM_CREATED"/>
+    <OrderItem orderId="10003" orderItemSeqId="10003" orderItemTypeId="WORK_ORDER_ITEM" statusId="ITEM_REJECTED"/>
+    <OrderItem orderId="10004" orderItemSeqId="10004" orderItemTypeId="BULK_ORDER_ITEM" statusId="ITEM_COMPLETED"/>
 
-    <ProductFeatureType productFeatureTypeId="COLOR" description="" />
-    <ProductFeatureType productFeatureTypeId="SIZE" description="" />
-    <ProductFeatureType productFeatureTypeId="MODEL_YEAR" description="" />
-    <ProductFeatureType productFeatureTypeId="PRODUCT_QUALITY" description="" />
-
-    <ProductFeatureApplType productFeatureApplTypeId="OPTIONAL_FEATURE" description="" />
-    <ProductFeatureApplType productFeatureApplTypeId="REQUIRED_FEATURE" description="" />
-    <ProductFeatureApplType productFeatureApplTypeId="SELECTABLE_FEATURE" description="" />
-    <ProductFeatureApplType productFeatureApplTypeId="STANDARD_FEATURE" description="" /
-
-    <ProductFeature productFeatureId="10001" productFeatureTypeId="COLOR" description="" />
-    <ProductFeature productFeatureId="10002" productFeatureTypeId="SIZE" description="" />
-
-    <ProductFeatureAppl productId="10003" productFeatureId="" productFeatureApplTypeId="" fromDate="" thruDate="" amount=""/>
-
+    <OrderItemShipGroup orderId="10001" shipGroupSeqId="10001" shipmentMethodTypeId="PURCHASE_SHIPMENT" trackingNumber="1234567891" shippingInstructions="" shipByDate="2025-03-25"/>
+    <OrderItemShipGroup orderId="10002" shipGroupSeqId="10002" shipmentMethodTypeId="PURCHASE_SHIPMENT" trackingNumber="1234567892" shippingInstructions="" shipByDate="2025-03-30"/>
+    <OrderItemShipGroup orderId="10003" shipGroupSeqId="10003" shipmentMethodTypeId="SALES_SHIPMENT" trackingNumber="1234567893" shippingInstructions="" shipByDate="2025-03-26"/>
+    <OrderItemShipGroup orderId="10004" shipGroupSeqId="10004" shipmentMethodTypeId="DROP_SHIPMENT" trackingNumber="1234567894" shippingInstructions="" shipByDate="2025-03-28"/>
 
 </entity-facade-xml>

@@ -1,51 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
 
-    <entity entity-name="Product" package="learningudm">
-        <field name="productId" type="id" is-pk="true"/>
-        <field name="productTypeId" type="text-short"/>
-        <field name="isVirtual" type="text-indicator"/>
-        <field name="isVariant" type="text-indicator"/>
-    </entity>
-
-    <entity entity-name="ProductType" package="learningudm">
-        <field name="productTypeId" type="text-short" is-pk="true"/>
-        <field name="isPhysical" type="text-indicator"/>
-        <field name="isDigital" type="text-indicator"/>
+    <entity entity-name="OrderType" package="learningudm">
+        <field name="orderTypeId" type="text-medium" is-pk="true"/>
         <field name="description" type="text-medium"/>
     </entity>
 
-   <entity entity-name="ProductAssoc" package="learningudm">
-       <field name="productId" type="id"/>
-       <field name="productIdTo" type="id"/>
-       <field name="productAssocTypeId" type="text-medium"/>
+    <entity entity-name="OrderItemType" package="learningudm">
+        <field name="orderItemTypeId" type="text-medium"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="OrderHeader" package="learningudm">
+        <field name="orderId" type="id" is-pk="true"/>
+        <field name="orderTypeId" type="text-medium"/>
+        <field name="orderName" type="text-medium"/>
+        <field name="orderDate" type="date"/>
+        <field name="statusId" type="text-medium"/>
+    </entity>
+
+   <entity entity-name="OrderContactMech" package="learningudm">
+       <field name="orderId" type="id"/>
+       <field name="contactMechId" type="id"/>
+       <field name="contactMechPurposeTypeId" type="text-medium"/>
    </entity>
 
-    <entity entity-name="ProductAssocType" package="learningudm">
-        <field name="productAssocTypeId" type="text-medium"/>
-        <field name="description" type="text-medium"/>
+    <entity entity-name="OrderItem" package="learningudm">
+        <field name="orderId" type="id"/>
+        <field name="orderItemSeqId" type="id"/>
+        <field name="orderItemTypeId" type="text-medium"/>
+        <field name="statusId" type="text-medium"/>
     </entity>
 
-<!--    features-->
-    <entity entity-name="ProductFeature" package="learningudm">
-        <field name="productFeatureId" type="id"/>
-        <field name="productFeatureTypeId" type="text-medium"/>
-        <field name="description" type="text-medium"/>
+    <entity entity-name="OrderItemShipGroup" package="learningudm">
+        <field name="orderId" type="id"/>
+        <field name="shipGroupSeqId" type="id"/>
+        <field name="shipmentMethodTypeId" type="text-medium"/>
+        <field name="trackingNumber" type="text-medium"/>
+        <field name="shippingInstructions" type="text-medium"/>
+        <field name="shipByDate" type="date"/>
     </entity>
-    <entity entity-name="ProductFeatureType" package="learningudm">
-        <field name="productFeatureTypeId" type="text-medium"/>
-        <field name="description" type="text-medium"/>
-    </entity>
-    <entity entity-name="ProductFeatureAppl" package="learningudm">
-        <field name="productId" type="text-medium"/>
-        <field name="productFeatureId" type="text-medium"/>
-        <field name="productFeatureApplTypeId" type="text-medium"/>
-        <field name="fromDate" type="date"/>
-        <field name="thruDate" type="date"/>
-        <field name="amount" type="number-integer"/>
-    </entity>
-    <entity entity-name="ProductFeatureApplType" package="learningudm">
-        <field name="productFeatureApplTypeId" type="text-medium"/>
-        <field name="description" type="text-medium"/>
-    </entity>
+
 </entities>
