@@ -11,12 +11,40 @@
         <field name="description" type="text-medium"/>
     </entity>
 
+    <entity entity-name="OrderItemAssocType" package="learningudm">
+        <field name="orderItemAssocTypeId" type="text-medium"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="OrderAdjustmentType" package="learningudm">
+        <field name="orderAdjustmentTypeId" type="text-medium"/>
+        <field name="description" type="text-medium"/>
+    </entity>
+
     <entity entity-name="OrderHeader" package="learningudm">
         <field name="orderId" type="id" is-pk="true"/>
         <field name="orderTypeId" type="text-medium"/>
         <field name="orderName" type="text-medium"/>
+        <field name="externalId" type="text-medium"/>
+        <field name="salesChannelEnumId" type="text-medium"/>
         <field name="orderDate" type="date"/>
+        <field name="productStoreId" type="text-medium"/>
+        <field name="grandTotal" type="number-integer"/>
         <field name="statusId" type="text-medium"/>
+        <field name="createdBy" type="text-medium"/>
+        <field name="currencyUom" type="text-medium"/>
+        <field name="webSiteId" type="text-medium"/>
+    </entity>
+
+    <entity entity-name="OrderStatus" package="learningudm">
+        <field name="orderStatusId" type="id"/>
+        <field name="statusId" type="id"/>
+        <field name="orderId" type="id"/>
+        <field name="orderPaymentPreferenceId" type="id"/>
+        <field name="orderItemSeqId" type="id"/>
+        <field name="statusDatetime" type="id"/>
+        <field name="statusUserLogin" type="id"/>
+        <field name="changeReason" type="id"/>
     </entity>
 
    <entity entity-name="OrderContactMech" package="learningudm">
@@ -25,10 +53,38 @@
        <field name="contactMechPurposeTypeId" type="text-medium"/>
    </entity>
 
+    <entity entity-name="OrderAdjustment" package="learningudm">
+        <field name="orderAdjustmentId" type="id"/>
+        <field name="orderAdjustmentTypeId" type="text-short"/>
+        <field name="orderItemSeqId" type="id"/>
+        <field name="shipGroupSeqId" type="id"/>
+        <field name="orderId" type="id"/>
+        <field name="comments" type="text-medium"/>
+        <field name="amount" type="number-integer"/>
+        <field name="createdDate" type="date-time"/>
+        <field name="createdByUserLogin" type="system"/>
+    </entity>
+
+    <entity entity-name="OrderRole" package="learningudm">
+        <field name="orderId" type="id"/>
+        <field name="partyId" type="id"/>
+        <field name="roleTypeId" type="text-medium"/>
+<!--        BILL_TO_CUSTOMER,   SHIP_TO_CUSTOMER, END_USER_CUSTOMER, PLACING_CUSTOMER-->
+        <field name="fromDate" type="date"/>
+        <field name="thruDate" type="date"/>
+    </entity>
+
     <entity entity-name="OrderItem" package="learningudm">
         <field name="orderId" type="id"/>
         <field name="orderItemSeqId" type="id"/>
+        <field name="externalId" type="id"/>
         <field name="orderItemTypeId" type="text-medium"/>
+        <field name="quantity" type="number-integer"/>
+        <field name="unitPrice" type="number-integer"/>
+        <field name="itemDescription" type="text-long"/>
+        <field name="productId" type="id"/>
+        <field name="productFeatureId" type="id"/>
+        <field name="productCategoryId" type="id"/>
         <field name="statusId" type="text-medium"/>
     </entity>
 
@@ -36,9 +92,23 @@
         <field name="orderId" type="id"/>
         <field name="shipGroupSeqId" type="id"/>
         <field name="shipmentMethodTypeId" type="text-medium"/>
-        <field name="trackingNumber" type="text-medium"/>
-        <field name="shippingInstructions" type="text-medium"/>
-        <field name="shipByDate" type="date"/>
+<!--        STANDARD-->
+        <field name="carrierPartyId" type="id"/>
+        <field name="carrierRoleTypeId" type="id"/>
+        <field name="facilityId" type="id"/>
+        <field name="contactMechId" type="id"/>
+        <field name="maySplit" type="text-short"/>
+        <field name="isGift" type="text-short"/>
     </entity>
 
+    <entity entity-name="OrderItemAssoc" package="learningudm">
+    <field name="orderId" type="id"/>
+    <field name="orderItemSeqId" type="id"/>
+    <field name="shipGroupSeqId" type="id"/>
+    <field name="orderItemAssocTypeId" type="id"/>
+    <field name="toOrderId" type="id"/>
+    <field name="toOrderItemSeqId" type="id"/>
+    <field name="toShipGroupSeqId" type="id"/>
+    <field name="quantity" type="id"/>
+    </entity>
 </entities>

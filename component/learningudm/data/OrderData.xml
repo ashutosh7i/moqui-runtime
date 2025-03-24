@@ -1,32 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-facade-xml>
 
-    <OrderType orderTypeId="PURCHASE_ORDER" description="" />
-    <OrderType orderTypeId="SALES_ORDER" description="" />
+    <OrderType orderTypeId="PURCHASE_ORDER" description="purchase order" />
+    <OrderType orderTypeId="SALES_ORDER" description="sales order" />
+    <OrderType orderTypeId="TRANSFER_ORDER" description="transfer order" />
 
-    <OrderItemType orderItemTypeId="INVENTORY_ORDER_ITEM" description=""/>
     <OrderItemType orderItemTypeId="PRODUCT_ORDER_ITEM" description=""/>
     <OrderItemType orderItemTypeId="WORK_ORDER_ITEM" description=""/>
-    <OrderItemType orderItemTypeId="BULK_ORDER_ITEM" description=""/>
 
-    <OrderHeader orderId="10001" orderTypeId="PURCHASE_ORDER" orderName="Ord001" orderDate="2025-03-20" statusId="ORDER_ACCEPTED"/>
-    <OrderHeader orderId="10002" orderTypeId="PURCHASE_ORDER" orderName="Ord002" orderDate="2025-03-20" statusId="ORDER_REJECTED"/>
-    <OrderHeader orderId="10003" orderTypeId="SALES_ORDER" orderName="Ord003" orderDate="2025-03-20" statusId="ORDER_CREATED"/>
-    <OrderHeader orderId="10004" orderTypeId="SALES_ORDER" orderName="Ord004" orderDate="2025-03-20" statusId="ORDER_COMPLETED"/>
+    <OrderItemAssocType orderItemAssocTypeId="EXCHANGE" description=""/>
+    <OrderItemAssocType orderItemAssocTypeId="KIT_COMPONENT" description=""/>
+    <OrderItemAssocType orderItemAssocTypeId="LINKED_PRODUCT" description=""/>
+    <OrderItemAssocType orderItemAssocTypeId="RE_SHIPPED" description=""/>
+
+    <OrderAdjustmentType orderAdjustmentTypeId="ADDITIONAL_FEATURE" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="DISCOUNT_ADJUSTMENT" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="FEE" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="MISCELLANEOUS_CHARGE" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="MKTG_PKG_AUTO_ADJUST" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="PROMOTION_ADJUSTMENT" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="REPLACE_ADJUSTMENT" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="SALES_TAX" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="SHIPPING_CHARGES" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="SURCHARGE_ADJUSTMENT" description=""/>
+    <OrderAdjustmentType orderAdjustmentTypeId="WARRANTY_ADJUSTMENT" description=""/>
+
+    <OrderHeader orderId="10001" orderTypeId="SALES_ORDER" orderName="Ord001" externalId="000001_shopify" salesChannelEnumId="WEB_SALES_CHANNEL" orderDate="2025-03-20" productStoreId="STORE" grandTotal="49" statusId="ORDER_CREATED" createdBy="system" currencyUom="USD" webSiteId="WEBSTORE"/>
+    <OrderHeader orderId="10002" orderTypeId="SALES_ORDER" orderName="Ord002" externalId="000002_shopify" salesChannelEnumId="WEB_SALES_CHANNEL" orderDate="2025-03-21" productStoreId="STORE" grandTotal="149" statusId="ORDER_APPROVED" createdBy="system" currencyUom="USD" webSiteId="WEBSTORE"/>
+    <OrderHeader orderId="10003" orderTypeId="SALES_ORDER" orderName="Ord003" externalId="000003_shopify" salesChannelEnumId="WEB_SALES_CHANNEL" orderDate="2025-03-22" productStoreId="STORE" grandTotal="229" statusId="ORDER_COMPLETED" createdBy="system" currencyUom="USD" webSiteId="WEBSTORE"/>
+    <OrderHeader orderId="10004" orderTypeId="SALES_ORDER" orderName="Ord004" externalId="000004_shopify" salesChannelEnumId="WEB_SALES_CHANNEL" orderDate="2025-03-23" productStoreId="STORE" grandTotal="449" statusId="ORDER_CANCELLED" createdBy="system" currencyUom="USD" webSiteId="WEBSTORE"/>
+    <OrderHeader orderId="10005" orderTypeId="SALES_ORDER" orderName="Ord005" externalId="000005_shopify" salesChannelEnumId="WEB_SALES_CHANNEL" orderDate="2025-03-24" productStoreId="STORE" grandTotal="349" statusId="ORDER_REJECTED" createdBy="system" currencyUom="USD" webSiteId="WEBSTORE"/>
+
+    <OrderStatus orderStatusId="10001" statusId="ORDER_CREATED" orderId="10001" orderPaymentPreferenceId="" orderItemSeqId="" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10002" statusId="ITEM_CREATED" orderId="10001" orderPaymentPreferenceId="" orderItemSeqId="10001" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10003" statusId="ITEM_CANCELED" orderId="10001" orderPaymentPreferenceId="" orderItemSeqId="10001" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10004" statusId="PAYMENT_AUTHORIZED" orderId="10001" orderPaymentPreferenceId="10001" orderItemSeqId="" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="Manual Ref Num: 7830310748324 Amount: 69.0000" />
+    <OrderStatus orderStatusId="10005" statusId="PAYMENT_SETTLED" orderId="10001" orderPaymentPreferenceId="" orderItemSeqId="" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10006" statusId="ORDER_COMPLETED" orderId="10001" orderPaymentPreferenceId="" orderItemSeqId="10001" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10007" statusId="ORDER_CREATED" orderId="10002" orderPaymentPreferenceId="" orderItemSeqId="" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10008" statusId="ITEM_CREATED" orderId="10002" orderPaymentPreferenceId="" orderItemSeqId="10002" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10009" statusId="ORDER_CREATED" orderId="10003" orderPaymentPreferenceId="" orderItemSeqId="" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10010" statusId="ITEM_CREATED" orderId="10003" orderPaymentPreferenceId="" orderItemSeqId="10003" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10011" statusId="ORDER_CREATED" orderId="10004" orderPaymentPreferenceId="" orderItemSeqId="" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10012" statusId="ITEM_CREATED" orderId="10004" orderPaymentPreferenceId="" orderItemSeqId="10004" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10013" statusId="ORDER_CREATED" orderId="10005" orderPaymentPreferenceId="" orderItemSeqId="" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
+    <OrderStatus orderStatusId="10014" statusId="ITEM_CREATED" orderId="10005" orderPaymentPreferenceId="" orderItemSeqId="10005" statusDatetime="2025-03-04 16:07:57.000" statusUserLogin="system" changeReason="" />
 
     <OrderContactMech orderId="10001" contactMechId="10001" contactMechPurposeTypeId="BILLING_EMAIL" />
     <OrderContactMech orderId="10001" contactMechId="10002" contactMechPurposeTypeId="PAYMENT_EMAIL" />
     <OrderContactMech orderId="10001" contactMechId="10002" contactMechPurposeTypeId="ORDER_EMAIL" />
     <OrderContactMech orderId="10002" contactMechId="10003" contactMechPurposeTypeId="BILLING_EMAIL" />
 
-    <OrderItem orderId="10001" orderItemSeqId="10001" orderItemTypeId="INVENTORY_ORDER_ITEM" statusId="ITEM_APPROVED"/>
-    <OrderItem orderId="10002" orderItemSeqId="10002" orderItemTypeId="PRODUCT_ORDER_ITEM" statusId="ITEM_CREATED"/>
-    <OrderItem orderId="10003" orderItemSeqId="10003" orderItemTypeId="WORK_ORDER_ITEM" statusId="ITEM_REJECTED"/>
-    <OrderItem orderId="10004" orderItemSeqId="10004" orderItemTypeId="BULK_ORDER_ITEM" statusId="ITEM_COMPLETED"/>
+    <OrderAdjustment orderAdjustmentId="10001" orderAdjustmentTypeId="SHIPPING_CHARGES" orderItemSeqId="" shipGroupSeqId="" orderId="10001" comments="First Class Package Internationa" amount="18.08" createdByUserLogin="system" createdDate="2025-03-04 08:11:11.540"/>
+    <OrderAdjustment orderAdjustmentId="10002" orderAdjustmentTypeId="SALES_TAX" orderItemSeqId="" shipGroupSeqId="" orderId="10002" comments="Expedited" amount="20.00" createdByUserLogin="system" createdDate="2025-03-04 08:11:11.540"/>
 
-    <OrderItemShipGroup orderId="10001" shipGroupSeqId="10001" shipmentMethodTypeId="PURCHASE_SHIPMENT" trackingNumber="1234567891" shippingInstructions="" shipByDate="2025-03-25"/>
-    <OrderItemShipGroup orderId="10002" shipGroupSeqId="10002" shipmentMethodTypeId="PURCHASE_SHIPMENT" trackingNumber="1234567892" shippingInstructions="" shipByDate="2025-03-30"/>
-    <OrderItemShipGroup orderId="10003" shipGroupSeqId="10003" shipmentMethodTypeId="SALES_SHIPMENT" trackingNumber="1234567893" shippingInstructions="" shipByDate="2025-03-26"/>
-    <OrderItemShipGroup orderId="10004" shipGroupSeqId="10004" shipmentMethodTypeId="DROP_SHIPMENT" trackingNumber="1234567894" shippingInstructions="" shipByDate="2025-03-28"/>
+    <OrderRole orderId="10001" partyId="10001" roleTypeId="BILL_TO_CUSTOMER" fromDate="2025-03-04" thruDate="2025-03-04"/>
+    <OrderRole orderId="10002" partyId="10002" roleTypeId="BILL_TO_CUSTOMER" fromDate="2025-03-04" thruDate="2025-03-04"/>
+    <OrderRole orderId="10003" partyId="10003" roleTypeId="SHIP_TO_CUSTOMER" fromDate="2025-03-04" thruDate="2025-03-04"/>
+    <OrderRole orderId="10004" partyId="10004" roleTypeId="SHIP_TO_CUSTOMER" fromDate="2025-03-04" thruDate="2025-03-04"/>
+    <OrderRole orderId="10005" partyId="10005" roleTypeId="SHIP_TO_CUSTOMER" fromDate="2025-03-04" thruDate="2025-03-04"/>
 
+    <OrderItem orderId="10001" orderItemSeqId="10001" externalId="000001_shopify" orderItemTypeId="INVENTORY_ORDER_ITEM" quantity="1" unitPrice="49" itemDescription="some item" productId="10005" productFeatureId="" productCategoryId="CATALOG" statusId="ITEM_APPROVED"/>
+    <OrderItem orderId="10002" orderItemSeqId="10002" externalId="000002_shopify" orderItemTypeId="INVENTORY_ORDER_ITEM" quantity="1" unitPrice="49" itemDescription="some item" productId="10005" productFeatureId="" productCategoryId="CATALOG" statusId="ITEM_APPROVED"/>
+    <OrderItem orderId="10003" orderItemSeqId="10003" externalId="000003_shopify" orderItemTypeId="INVENTORY_ORDER_ITEM" quantity="1" unitPrice="49" itemDescription="some item" productId="10005" productFeatureId="" productCategoryId="CATALOG" statusId="ITEM_APPROVED"/>
+    <OrderItem orderId="10004" orderItemSeqId="10004" externalId="000004_shopify" orderItemTypeId="INVENTORY_ORDER_ITEM" quantity="1" unitPrice="49" itemDescription="some item" productId="10005" productFeatureId="" productCategoryId="CATALOG" statusId="ITEM_APPROVED"/>
+    <OrderItem orderId="10005" orderItemSeqId="10005" externalId="000005_shopify" orderItemTypeId="INVENTORY_ORDER_ITEM" quantity="1" unitPrice="49" itemDescription="some item" productId="10005" productFeatureId="" productCategoryId="CATALOG" statusId="ITEM_APPROVED"/>
+
+    <OrderItemShipGroup orderId="10001" shipGroupSeqId="10001" shipmentMethodTypeId="STANDARD" carrierPartyId="" carrierRoleTypeId="CARRIER" facilityId="BROOKLYN" contactMechId="10001" maySplit="N" isGift="N"/>
+    <OrderItemShipGroup orderId="10002" shipGroupSeqId="10002" shipmentMethodTypeId="STANDARD" carrierPartyId="" carrierRoleTypeId="CARRIER" facilityId="BROOKLYN" contactMechId="10002" maySplit="N" isGift="N"/>
+    <OrderItemShipGroup orderId="10003" shipGroupSeqId="10003" shipmentMethodTypeId="STANDARD" carrierPartyId="" carrierRoleTypeId="CARRIER" facilityId="STATEN_ISLAND" contactMechId="10003" maySplit="N" isGift="N"/>
+    <OrderItemShipGroup orderId="10004" shipGroupSeqId="10005" shipmentMethodTypeId="STANDARD" carrierPartyId="" carrierRoleTypeId="CARRIER" facilityId="UNFILLABLE_PARKING" contactMechId="10004" maySplit="N" isGift="N"/>
+    <OrderItemShipGroup orderId="10005" shipGroupSeqId="10005" shipmentMethodTypeId="STANDARD" carrierPartyId="" carrierRoleTypeId="CARRIER" facilityId="SOUTH_JORDAN" contactMechId="10005" maySplit="N" isGift="N"/>
+
+    <OrderItemAssoc orderId="10001" orderItemSeqId="10001" shipGroupSeqId="10001" orderItemAssocTypeId="KIT_COMPONENT" toOrderId="10002" toOrderItemSeqId="10002" toShipGroupSeqId="10002" quantity="1"/>
 </entity-facade-xml>
